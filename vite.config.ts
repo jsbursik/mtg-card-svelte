@@ -1,29 +1,23 @@
-import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react'
-import dts from 'vite-plugin-dts'
-import cssInjectedByJsPlugin from 'vite-plugin-css-injected-by-js'
-import { resolve } from 'node:path'
+import { defineConfig } from "vite";
+import { svelte } from "@sveltejs/vite-plugin-svelte";
+import { resolve } from "path";
 
 // https://vite.dev/config/
 export default defineConfig({
-  plugins: [
-    react(),
-    dts({
-      tsconfigPath: './tsconfig.app.json',
-      include: ['src/index.ts', 'src/components'],
-    }),
-    cssInjectedByJsPlugin(),
-  ],
+  plugins: [svelte()],
   build: {
     lib: {
-      entry: resolve(__dirname, 'src/index.ts'),
-      formats: ['es'],
-      fileName: 'index',
+      entry: resolve(__dirname, "src/index.ts"),
+      name: "mtg-card-svelte",
+      fileName: (format) => `mtg-card-svelte.${format}.js`,
     },
     rollupOptions: {
-      external: ['react', 'react-dom', 'react/jsx-runtime'],
+      external: ["svelte"],
+      output: {
+        globals: {
+          svelte: "Svelte",
+        },
+      },
     },
-    assetsInlineLimit: 100_000_000, // inline all assets as base64
-    copyPublicDir: false,
   },
-})
+});

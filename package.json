@@ -1,58 +1,21 @@
 {
-  "name": "mtg-card",
-  "version": "0.1.1",
+  "name": "mtg-card-svelte",
+  "private": true,
+  "version": "0.0.0",
   "type": "module",
-  "description": "A React component that renders Magic: The Gathering cards with full color theming and mana symbols",
-  "keywords": ["mtg", "magic-the-gathering", "react", "card", "component"],
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/FeSens/mtg-card.git"
-  },
-  "license": "MIT",
-  "author": "Felipe Bonetto",
-  "main": "dist/index.js",
-  "module": "dist/index.js",
-  "types": "dist/index.d.ts",
-  "exports": {
-    ".": {
-      "import": "./dist/index.js",
-      "types": "./dist/index.d.ts"
-    }
-  },
-  "files": [
-    "dist"
-  ],
   "scripts": {
     "dev": "vite",
-    "build": "tsc -b && vite build",
-    "lint": "eslint .",
+    "build": "vite build",
     "preview": "vite preview",
-    "prepublishOnly": "pnpm build",
-    "build:demo": "vite build --config vite.config.demo.ts",
-    "deploy": "pnpm build:demo && gh-pages -d demo-dist"
-  },
-  "peerDependencies": {
-    "react": "^18.0.0 || ^19.0.0",
-    "react-dom": "^18.0.0 || ^19.0.0"
+    "check": "svelte-check --tsconfig ./tsconfig.app.json && tsc -p tsconfig.node.json"
   },
   "devDependencies": {
-    "@eslint/js": "^9.39.1",
+    "@sveltejs/vite-plugin-svelte": "^6.2.1",
+    "@tsconfig/svelte": "^5.0.6",
     "@types/node": "^24.10.1",
-    "@types/react": "^19.2.5",
-    "@types/react-dom": "^19.2.3",
-    "@vitejs/plugin-react": "^5.1.1",
-    "eslint": "^9.39.1",
-    "eslint-plugin-react-hooks": "^7.0.1",
-    "eslint-plugin-react-refresh": "^0.4.24",
-    "gh-pages": "^6.3.0",
-    "globals": "^16.5.0",
-    "react": "^19.2.0",
-    "react-dom": "^19.2.0",
-    "sharp": "^0.34.5",
+    "svelte": "^5.45.2",
+    "svelte-check": "^4.3.4",
     "typescript": "~5.9.3",
-    "typescript-eslint": "^8.46.4",
-    "vite": "^7.2.4",
-    "vite-plugin-css-injected-by-js": "^3.5.2",
-    "vite-plugin-dts": "^4.5.4"
+    "vite": "^7.3.1"
   }
 }
