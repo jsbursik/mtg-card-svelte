@@ -2,79 +2,79 @@
   import "./css/MtgCard.css";
 
   // Color mana backgrounds (circles)
-  import manaWSym from "../../assets/mana-w-sym.svg";
-  import manaUSym from "../../assets/mana-u-sym.svg";
-  import manaGeneric from "../../assets/mana-generic.svg";
-  import manaRSym from "../../assets/mana-r-sym.svg";
-  import manaGSym from "../../assets/mana-g-sym.svg";
-  import manaCSym from "../../assets/mana-c.svg";
-  import manaESym from "../../assets/mana-e.svg";
-  import manaSBg from "../../assets/mana-s-bg.svg";
-  import manaSInner from "../../assets/mana-s-inner.svg";
-  import mana10 from "../../assets/mana-10.svg";
+  import manaWSym from "../assets/mana-w-sym.svg";
+  import manaUSym from "../assets/mana-u-sym.svg";
+  import manaGeneric from "../assets/mana-generic.svg";
+  import manaRSym from "../assets/mana-r-sym.svg";
+  import manaGSym from "../assets/mana-g-sym.svg";
+  import manaCSym from "../assets/mana-c.svg";
+  import manaESym from "../assets/mana-e.svg";
+  import manaSBg from "../assets/mana-s-bg.svg";
+  import manaSInner from "../assets/mana-s-inner.svg";
+  import mana10 from "../assets/mana-10.svg";
 
   // Color mana vectors (inner symbols)
-  import vectorWSym from "../../assets/vector-w-sym.svg";
-  import vectorUSym from "../../assets/vector-u-sym.svg";
-  import vectorBSym from "../../assets/vector-b-sym.svg";
-  import vectorRSym from "../../assets/vector-r-sym.svg";
-  import vectorGSym from "../../assets/vector-g-sym.svg";
-  import vectorCSym from "../../assets/vector-c.svg";
-  import vectorTSym from "../../assets/vector-t.svg";
-  import vectorXSym from "../../assets/vector-x.svg";
+  import vectorWSym from "../assets/vector-w-sym.svg";
+  import vectorUSym from "../assets/vector-u-sym.svg";
+  import vectorBSym from "../assets/vector-b-sym.svg";
+  import vectorRSym from "../assets/vector-r-sym.svg";
+  import vectorGSym from "../assets/vector-g-sym.svg";
+  import vectorCSym from "../assets/vector-c.svg";
+  import vectorTSym from "../assets/vector-t.svg";
+  import vectorXSym from "../assets/vector-x.svg";
 
   // Number vectors (0-9)
-  import vector0 from "../../assets/vector-0.svg";
-  import vector1 from "../../assets/vector-1-new.svg";
-  import vector2 from "../../assets/vector-2.svg";
-  import vector3 from "../../assets/vector-3.svg";
-  import vector4 from "../../assets/vector-4.svg";
-  import vector5 from "../../assets/vector-5.svg";
-  import vector6 from "../../assets/vector-6.svg";
-  import vector7 from "../../assets/vector-7.svg";
-  import vector8 from "../../assets/vector-8.svg";
-  import vector9 from "../../assets/vector-9.svg";
+  import vector0 from "../assets/vector-0.svg";
+  import vector1 from "../assets/vector-1-new.svg";
+  import vector2 from "../assets/vector-2.svg";
+  import vector3 from "../assets/vector-3.svg";
+  import vector4 from "../assets/vector-4.svg";
+  import vector5 from "../assets/vector-5.svg";
+  import vector6 from "../assets/vector-6.svg";
+  import vector7 from "../assets/vector-7.svg";
+  import vector8 from "../assets/vector-8.svg";
+  import vector9 from "../assets/vector-9.svg";
 
   // Number vectors (11-20) - for the larger circle style
-  import vector11 from "../../assets/vector-11.svg";
-  import vector12 from "../../assets/vector-12.svg";
-  import vector13 from "../../assets/vector-13.svg";
-  import vector14 from "../../assets/vector-14.svg";
-  import vector15 from "../../assets/vector-15.svg";
-  import vector16 from "../../assets/vector-16.svg";
-  import vector17 from "../../assets/vector-17.svg";
-  import vector18 from "../../assets/vector-18.svg";
-  import vector19 from "../../assets/vector-19.svg";
-  import vector20 from "../../assets/vector-20.svg";
+  import vector11 from "../assets/vector-11.svg";
+  import vector12 from "../assets/vector-12.svg";
+  import vector13 from "../assets/vector-13.svg";
+  import vector14 from "../assets/vector-14.svg";
+  import vector15 from "../assets/vector-15.svg";
+  import vector16 from "../assets/vector-16.svg";
+  import vector17 from "../assets/vector-17.svg";
+  import vector18 from "../assets/vector-18.svg";
+  import vector19 from "../assets/vector-19.svg";
+  import vector20 from "../assets/vector-20.svg";
 
   // Hybrid mana backgrounds
-  import hybridWuBg from "../../assets/hybrid-wu-bg.svg";
-  import hybridUbBg from "../../assets/hybrid-ub-bg.svg";
-  import hybridRwBg from "../../assets/hybrid-rw-bg.svg";
-  import hybridUrBg from "../../assets/hybrid-ur-bg.svg";
-  import hybridGwBg from "../../assets/hybrid-gw-bg.svg";
-  import hybridBrBg from "../../assets/hybrid-br-bg.svg";
+  import hybridWuBg from "../assets/hybrid-wu-bg.svg";
+  import hybridUbBg from "../assets/hybrid-ub-bg.svg";
+  import hybridRwBg from "../assets/hybrid-rw-bg.svg";
+  import hybridUrBg from "../assets/hybrid-ur-bg.svg";
+  import hybridGwBg from "../assets/hybrid-gw-bg.svg";
+  import hybridBrBg from "../assets/hybrid-br-bg.svg";
   // Hybrid mana group overlays
-  import hybridGroupWu from "../../assets/hybrid-group-wu.svg";
-  import hybridGroupWb from "../../assets/hybrid-group-wb.svg";
-  import hybridGroupUb from "../../assets/hybrid-group-ub.svg";
-  import hybridGroupRw from "../../assets/hybrid-group-rw.svg";
-  import hybridGroupRg from "../../assets/hybrid-group-rg.svg";
-  import hybridGroupUr from "../../assets/hybrid-group-ur.svg";
-  import hybridGroupGw from "../../assets/hybrid-group-gw.svg";
-  import hybridGroupGu from "../../assets/hybrid-group-gu.svg";
-  import hybridGroupBr from "../../assets/hybrid-group-br.svg";
-  import hybridGroupBg from "../../assets/hybrid-group-bg.svg";
+  import hybridGroupWu from "../assets/hybrid-group-wu.svg";
+  import hybridGroupWb from "../assets/hybrid-group-wb.svg";
+  import hybridGroupUb from "../assets/hybrid-group-ub.svg";
+  import hybridGroupRw from "../assets/hybrid-group-rw.svg";
+  import hybridGroupRg from "../assets/hybrid-group-rg.svg";
+  import hybridGroupUr from "../assets/hybrid-group-ur.svg";
+  import hybridGroupGw from "../assets/hybrid-group-gw.svg";
+  import hybridGroupGu from "../assets/hybrid-group-gu.svg";
+  import hybridGroupBr from "../assets/hybrid-group-br.svg";
+  import hybridGroupBg from "../assets/hybrid-group-bg.svg";
 
   // Phyrexian mana
-  import phyWp from "../../assets/phy-wp.svg";
-  import phyUp from "../../assets/phy-up.svg";
-  import phyBp from "../../assets/phy-bp.svg";
-  import phyRp from "../../assets/phy-rp.svg";
-  import phyGp from "../../assets/phy-gp.svg";
-  import phyVector from "../../assets/phy-vector.svg";
-  import phyVectorGp from "../../assets/phy-vector-gp.svg";
-  import phyVectorBp from "../../assets/phy-vector-bp.svg";
+  import phyWp from "../assets/phy-wp.svg";
+  import phyUp from "../assets/phy-up.svg";
+  import phyBp from "../assets/phy-bp.svg";
+  import phyRp from "../assets/phy-rp.svg";
+  import phyGp from "../assets/phy-gp.svg";
+  import phyVector from "../assets/phy-vector.svg";
+  import phyVectorGp from "../assets/phy-vector-gp.svg";
+  import phyVectorBp from "../assets/phy-vector-bp.svg";
 
   // ---- Symbol data maps ----
 

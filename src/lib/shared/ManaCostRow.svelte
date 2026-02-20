@@ -1,5 +1,5 @@
 <script lang="ts">
-  import ManaSymbol from "./ManaSymbol.svelte";
+  import ManaSymbol from "../ManaSymbol.svelte";
 
   let { manaCost, className }: { manaCost: string[]; className: string } = $props();
 </script>
