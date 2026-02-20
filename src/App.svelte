@@ -2,7 +2,7 @@
   import MtgCard from "./lib/MtgCard.svelte";
 </script>
 
-<main>
+<main style="display: flex; flex-direction: row">
   <div>
     <MtgCard
       frame="standard"
