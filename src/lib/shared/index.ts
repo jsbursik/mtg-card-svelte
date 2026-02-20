@@ -1,8 +1,4 @@
-import ManaSymbol from "../ManaSymbol.svelte";
-
-// Static assets (no theming needed)
-import artistIcon from "../../assets/artist-icon.svg";
-import setSymbolSvg from "../../assets/set-symbol.svg";
+import { getColorTheme, type CardColorTheme } from "./colors";
 
 // Frame background textures
 import bgWhite from "../../assets/bgWhite.webp";
@@ -80,4 +76,46 @@ export function getTextureUrl(manaCost: string[], frame?: string): string {
     if (DUAL_TEXTURES[key]) return DUAL_TEXTURES[key];
   }
   return bgGold;
+}
+
+export function useCardTheme(manaCost: string[], frame?: string) {
+  const theme = getColorTheme(manaCost, frame);
+  const textureUrl = getTextureUrl(manaCost, frame);
+  return { theme, textureUrl };
+}
+
+export function getThemeVars(theme: CardColorTheme) {
+  return {
+    frameVars: `--fill-0: ${theme.card}`,
+    fieldVars: `--fill-0: ${theme.nameType}`,
+    borderVars: `--stroke-0: ${theme.border}`,
+    legendVars: `--fill-0: ${theme.border}`,
+    ptVars: `--fill-0: ${theme.nameType}`,
+  };
+}
+
+/** Build a jsdelivr CDN URL for a set symbol SVG from mtg-vectors */
+const RARITY_MAP: Record<string, string> = {
+  common: "C",
+  uncommon: "U",
+  rare: "R",
+  mythic: "M",
+};
+
+export function getSetSymbolUrl(setCode: string, rarity?: string): string {
+  const code = setCode.toUpperCase();
+  const file = (rarity && RARITY_MAP[rarity.toLowerCase()]) || rarity?.toUpperCase() || "R";
+  return `https://cdn.jsdelivr.net/gh/Investigamer/mtg-vectors@main/svg/optimized/set/${code}/${file}.svg`;
+}
+
+/**
+ * Parse rules text and prepare for inline symbols
+ * Returns an array of { type: "text" | "symbol", value: string }
+ */
+export function parseRulesText(text: string): Array<{ type: "text"; value: string } | { type: "symbol"; value: string }> {
+  return text.split(/(\{[^}]+\})/).map((part) => {
+    const match = part.match(/^\{([^}]+)\}$/);
+    if (match) return { type: "symbol", value: match[1] };
+    return { type: "text", value: part };
+  });
 }
