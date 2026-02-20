@@ -175,5 +175,5 @@
   />
 
   <!-- 15. Copyright -->
-  <Copyright className="copyright" {year} />
+  <Copyright className={styles.copyright} {year} />
 </div>
