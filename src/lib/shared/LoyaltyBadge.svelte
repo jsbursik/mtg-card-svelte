@@ -1,6 +1,6 @@
 <script lang="ts">
   import Svg from "./Svg.svelte";
-  import "../css/PlaneswalkerCard.css";
+  import styles from "../css/PlaneswalkerCard.module.css";
 
   import pwAbilityPlusOuterRaw from "../../assets/pw-ability-plus-outer.svg?raw";
   import pwAbilityPlusInnerRaw from "../../assets/pw-ability-plus-inner.svg?raw";
@@ -18,37 +18,37 @@
 </script>
 
 {#if minus}
-  <div class="loyaltyBadge loyaltyBadgeMinus">
-    <div class="loyaltyBadgeOuter">
-      <div class="loyaltyBadgeMinusFlip">
-        <div class="loyaltyBadgeOuterInner">
-          <Svg html={pwAbilityMinusOuterRaw} className="fill" />
+  <div class={`${styles.loyaltyBadge} ${styles.loyaltyBadgeMinus}`}>
+    <div class={styles.loyaltyBadgeOuter}>
+      <div class={styles.loyaltyBadgeMinusFlip}>
+        <div class={styles.loyaltyBadgeOuterInner}>
+          <Svg html={pwAbilityMinusOuterRaw} className={styles.fill} />
         </div>
       </div>
     </div>
-    <div class="loyaltyBadgeInner">
-      <div class="loyaltyBadgeMinusFlip">
-        <div class="loyaltyBadgeInnerInner">
-          <Svg html={pwAbilityMinusInnerRaw} className="fill" />
+    <div class={styles.loyaltyBadgeInner}>
+      <div class={styles.loyaltyBadgeMinusFlip}>
+        <div class={styles.loyaltyBadgeInnerInner}>
+          <Svg html={pwAbilityMinusInnerRaw} className={styles.fill} />
         </div>
       </div>
     </div>
-    <span class="loyaltyBadgeCost">{cost}</span>
-    <span class="loyaltyBadgeColon">:</span>
+    <span class={styles.loyaltyBadgeCost}>{cost}</span>
+    <span class={styles.loyaltyBadgeColon}>:</span>
   </div>
 {:else}
-  <div class="loyaltyBadge">
-    <div class="loyaltyBadgeOuter">
-      <div class="loyaltyBadgeOuterInner">
-        <Svg html={pwAbilityPlusOuterRaw} className="fill" />
+  <div class={styles.loyaltyBadge}>
+    <div class={styles.loyaltyBadgeOuter}>
+      <div class={styles.loyaltyBadgeOuterInner}>
+        <Svg html={pwAbilityPlusOuterRaw} className={styles.fill} />
       </div>
     </div>
-    <div class="loyaltyBadgeInner">
-      <div class="loyaltyBadgeInnerInner">
-        <Svg html={pwAbilityPlusInnerRaw} className="fill" />
+    <div class={styles.loyaltyBadgeInner}>
+      <div class={styles.loyaltyBadgeInnerInner}>
+        <Svg html={pwAbilityPlusInnerRaw} className={styles.fill} />
       </div>
     </div>
-    <span class="loyaltyBadgeCost">{cost}</span>
-    <span class="loyaltyBadgeColon">:</span>
+    <span class={styles.loyaltyBadgeCost}>{cost}</span>
+    <span class={styles.loyaltyBadgeColon}>:</span>
   </div>
 {/if}

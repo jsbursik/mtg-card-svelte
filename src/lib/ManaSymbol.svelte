@@ -1,5 +1,5 @@
 <script lang="ts">
-  import "./css/MtgCard.css";
+  import styles from "./css/MtgCard.module.css";
 
   // Color mana backgrounds (circles)
   import manaWSym from "../assets/mana-w-sym.svg";
@@ -146,7 +146,7 @@
   }
 
   let { symbol, size = 32, margin = 0 }: ManaSymbolProps = $props();
-  const s = symbol.toUpperCase();
+  const s = $derived(symbol.toUpperCase());
 
   let resolved = $derived(resolve(symbol.toUpperCase()));
   let sizeStyle = $derived(`width: ${size}px; height: ${size}px; margin-bottom: ${margin}px`);
@@ -166,19 +166,19 @@
   }
 </script>
 
-<div class="manaSymbol" style={sizeStyle}>
+<div class={styles.manaSymbol} style={sizeStyle}>
   {#if resolved.single}
-    <img src={resolved.single} alt={symbol} class="manaSymbolBg" />
+    <img src={resolved.single} alt={symbol} class={styles.manaSymbolBg} />
   {:else if resolved.overlay}
-    <img src={resolved.bg} alt={symbol} class="manaSymbolBg" />
-    <img src={resolved.overlay} alt="" class="manaSymbolBg" style="position: absolute; inset: 0" />
+    <img src={resolved.bg} alt={symbol} class={styles.manaSymbolBg} />
+    <img src={resolved.overlay} alt="" class={styles.manaSymbolBg} style="position: absolute; inset: 0" />
   {:else if resolved.fallback}
-    <img src={resolved.bg} alt={symbol} class="manaSymbolBg" />
-    <span class="manaSymbolFallback">{resolved.fallback}</span>
+    <img src={resolved.bg} alt={symbol} class={styles.manaSymbolBg} />
+    <span class={styles.manaSymbolFallback}>{resolved.fallback}</span>
   {:else}
-    <img src={resolved.bg} alt={symbol} class="manaSymbolBg" />
-    <div class="manaSymbolVector" style={`inset: ${resolved.inset}`}>
-      <img src={resolved.vector} alt="" class="fill" />
+    <img src={resolved.bg} alt={symbol} class={styles.manaSymbolBg} />
+    <div class={styles.manaSymbolVector} style={`inset: ${resolved.inset}`}>
+      <img src={resolved.vector} alt="" class={styles.fill} />
     </div>
   {/if}
 </div>
