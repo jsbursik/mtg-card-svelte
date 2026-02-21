@@ -18,5 +18,11 @@
     setSymbolUrl?: string;
   } = $props();
 
-  const src = setSymbolUrl ? setSymbolUrl : setCode ? getSetSymbolUrl(setCode, rarity) : setSymbolSvg;
+  const src = $derived(setSymbolUrl ? setSymbolUrl : setCode ? getSetSymbolUrl(setCode, rarity) : setSymbolSvg);
 </script>
+
+<div class={className}>
+  <div class={innerClassName}>
+    <img {src} alt="" class={fillClassName} />
+  </div>
+</div>
