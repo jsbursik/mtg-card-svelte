@@ -132,7 +132,7 @@
       <p class={advStyles.adventureRules}>
         {#each parseRulesText(adventureRulesText) as part}
           {#if part.type === "symbol"}
-            <ManaSymbol symbol={part.value} size={16} margin={4} />
+            <ManaSymbol symbol={part.value} size={16} />
           {:else}
             {part.value}
           {/if}
@@ -145,7 +145,7 @@
         <p class={advStyles.creatureRules}>
           {#each parseRulesText(rulesText) as part}
             {#if part.type === "symbol"}
-              <ManaSymbol symbol={part.value} size={16} margin={4} />
+              <ManaSymbol symbol={part.value} size={16} />
             {:else}
               {part.value}
             {/if}

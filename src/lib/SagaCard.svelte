@@ -176,7 +176,7 @@
             <span class={styles.chapterText}>
               {#each parseRulesText(chapter.text) as part}
                 {#if part.type === "symbol"}
-                  <ManaSymbol symbol={part.value} size={22} margin={4} />
+                  <ManaSymbol symbol={part.value} size={22} />
                 {:else}
                   {part.value}
                 {/if}
