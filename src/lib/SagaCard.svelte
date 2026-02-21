@@ -1,4 +1,5 @@
 <script lang="ts">
+  import ManaSymbol from "./ManaSymbol.svelte";
   import type { SagaCardProps } from "./types";
   import styles from "./css/SagaCard.module.css";
 
@@ -50,7 +51,7 @@
   const DEFAULT_REMINDER = "(As this Saga enters and after your draw step, add a lore counter. Sacrifice after III).";
 </script>
 
-{#snippet LoreStep({ numerals }: { numerals: string })}
+{#snippet LoreStep(numerals: string)}
   <div class={styles.loreStep}>
     <div class={styles.loreStepOuter}>
       <div class={styles.loreStepOuterInner}>
@@ -168,15 +169,21 @@
 
       <!-- Chapter steps -->
       <div class={styles.chapterSteps}>
-        <!-- {chapters.map((chapter, i) => (
-              <div key={i}>
-                <ChapterDivider />
-                <div className={styles.chapterRow}>
-                  <LoreStep numerals={chapter.numerals} />
-                  <span className={styles.chapterText}>{parseRulesText(chapter.text)}</span>
-                </div>
-              </div>
-            ))} -->
+        {#each chapters as chapter}
+          {@render ChapterDivider()}
+          <div class={styles.chapterRow}>
+            {@render LoreStep(chapter.numerals)}
+            <span class={styles.chapterText}>
+              {#each parseRulesText(chapter.text) as part}
+                {#if part.type === "symbol"}
+                  <ManaSymbol symbol={part.value} size={22} margin={4} />
+                {:else}
+                  {part.value}
+                {/if}
+              {/each}
+            </span>
+          </div>
+        {/each}
       </div>
     </div>
   </div>
