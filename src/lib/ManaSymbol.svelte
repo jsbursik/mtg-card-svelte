@@ -146,8 +146,6 @@
   }
 
   let { symbol, size = 32, margin = 0 }: ManaSymbolProps = $props();
-  const s = $derived(symbol.toUpperCase());
-
   let resolved = $derived(resolve(symbol.toUpperCase()));
   let sizeStyle = $derived(`width: ${size}px; height: ${size}px; margin-bottom: ${margin}px`);
 
